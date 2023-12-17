@@ -77,3 +77,35 @@ def un_set_user_sudo(user_id):
     return db.users.update_one(
         {'user_id': user_id}, {'$set': {'sudo': 'false'}}
     )
+
+# Operações relacionadas aos chats
+
+
+def add_chat_db(chat_id, chat_name):
+    return db.chats.insert_one(
+        {
+            'chat_id': chat_id,
+            'chat_name': chat_name,
+            'blocked': 'false',
+            'forwarding': 'true',
+            'versdia': 'true',
+            'verstema': 'Encorajamento',
+            'last_interaction_group': ''
+        }
+    )
+
+
+def get_all_chats(query=None):
+    if query:
+        return db.chats.find(query)
+    else:
+        return db.chats.find({})
+
+
+def search_group(chat_id):
+    return db.chats.find_one({'chat_id': chat_id})
+
+
+def remove_chat_db(chat_id):
+    db.chats.delete_one({'chat_id': chat_id})
+
