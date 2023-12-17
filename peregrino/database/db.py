@@ -109,3 +109,50 @@ def search_group(chat_id):
 def remove_chat_db(chat_id):
     db.chats.delete_one({'chat_id': chat_id})
 
+# Operações relacionadas a planos
+
+
+def add_plano_db(user_id, firstname):
+    return db.plano.insert_one(
+        {
+            'user_id': user_id,
+            'firstname': firstname,
+            'planoAtivo': 'false',
+            'diaPlano': '',
+            'versiculoPlano': '',
+            'messagePlano': [],
+            'messagePositionPlano': '',
+            'messageIdPlano': '',
+            'planosConcluidos': 0,
+            'plano1': 'false',
+            'plano2': 'false',
+            'plano3': 'false',
+            'plano4': 'false',
+            'plano5': 'false',
+            'plano6': 'false',
+            'plano7': 'false',
+            'plano8': 'false',
+            'plano9': 'false',
+            'plano10': 'false',
+            'plano11': 'false',
+            'plano12': 'false',
+            'plano13': 'false',
+            'plano14': 'false',
+            'plano15': 'false',
+            'plano16': 'false',
+            'plano17': 'false',
+            'plano18': 'false',
+            'plano19': 'false',
+            'plano20': 'false',
+            'plano21': 'false',
+            'plano22': 'false',
+            'plano23': 'false',
+            'plano24': 'false',
+            'plano25': 'false',
+            'plano26': 'false',
+            'plano27': 'false',
+            'plano28': 'false',
+            'plano29': 'false',
+            'plano30': 'false'
+        }
+    )
